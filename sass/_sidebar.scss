@@ -4,4 +4,35 @@
     background-color: base.$color-primary;
     grid-column: sidebar-start/ sidebar-end;
     grid-row: 1/-1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-btn 
+{
+    border: none;
+    border-radius: 0;
+    height: 2px;
+    width: 4.5rem;
+    margin-top: 4rem;
+    background-color: blue;
+    &::before, &::after 
+    {
+        content: "";
+        height: 2px;
+        width: 4.5rem;
+        display: block;
+    }
+
+    &::before
+    {
+        transform: translateY(-1.5rem);
+        background-color:yellow;
+    }
+
+    &::after
+    {
+        transform: translateY(1.5rem);
+        background-color: red;
+    }
 }
