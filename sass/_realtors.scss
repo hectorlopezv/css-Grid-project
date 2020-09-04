@@ -11,6 +11,10 @@
     justify-content:center;
     grid-row-gap: 2rem;
     justify-items: center;
+    @media only screen and (max-width: base.$bp-medium)
+    {
+        grid-column: 1/-1;
+    }
 
     &__img
     {
@@ -28,6 +32,13 @@
         grid-row-gap: 5vh;
         grid-column-gap: 2rem;
         align-items: center;
+
+        @media only screen and (max-width: base.$bp-medium)
+        {
+            grid-template-rows: min-content;
+            grid-template-columns: repeat(6, minmax(min-content, max-content));
+
+        }
 
     }
 
