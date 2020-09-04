@@ -1,6 +1,43 @@
 @use 'base';
 .header 
 {
-    background-color: base.$color-grey-dark-1;
+    background-image: linear-gradient( rgba(base.$color-secondary, .93), rgba(base.$color-secondary, .93)  ), url(../img/hero.jpeg);
+    background-size: cover;
+    background-position: center;
     grid-column: full-start/col-end 6;
+
+    padding: 8rem;
+    padding-top: 4rem;
+    display: grid;
+
+    grid-template-rows: .4fr min-content 5rem min-content min-content;
+    grid-template-columns: max-content;
+    row-gap: 1.5rem;
+    justify-content: center;
+    align-content: center;
+
+
+    &__logo
+    {
+        height: 3rem;
+        justify-self: center;
+    }
+    &__btn 
+    {
+        align-self: start;
+        justify-self: start;
+    }
+    &__seenon-text{}
+    
+    &__seenon-logos
+    {
+        img
+        {
+            height: 2.5rem;
+
+        }
+    }
 }
+
+
+
