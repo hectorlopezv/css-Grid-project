@@ -8,6 +8,11 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   font-family: "Nunito", sans-serif;
@@ -21,6 +26,13 @@ body {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
+@media only screen and (max-width: 62.5em) {
+  .container {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  }
+}
+
 .heading-4, .heading-3, .heading-2, .heading-1 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -100,6 +112,14 @@ body {
   display: flex;
   justify-content: center;
 }
+@media only screen and (max-width: 62.5em) {
+  .sidebar {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    justify-content: end;
+    align-items: center;
+  }
+}
 
 .nav-btn {
   border: none;
@@ -108,6 +128,12 @@ body {
   width: 4.5rem;
   margin-top: 4rem;
   background-color: blue;
+}
+@media only screen and (max-width: 62.5em) {
+  .nav-btn {
+    margin-top: 0;
+    margin-right: 3rem;
+  }
 }
 .nav-btn::before, .nav-btn::after {
   content: "";
@@ -132,8 +158,8 @@ body {
   padding: 8rem;
   padding-top: 4rem;
   display: grid;
-  grid-template-rows: 0.4fr min-content min-content 0.5fr max-content;
-  grid-template-columns: max-content;
+  grid-template-rows: 0.4fr min-content minmax(min-content, max-content) 0.2fr max-content;
+  grid-template-columns: minmax(min-content, max-content);
   row-gap: 2rem;
   justify-content: center;
   align-content: center;
@@ -164,10 +190,12 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  align-items: center;
   column-gap: 3rem;
 }
 .header__seenon-logos img {
-  height: 2.5rem;
+  max-height: 2.5rem;
+  max-width: 100%;
   filter: brightness(70%);
 }
 

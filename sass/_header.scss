@@ -10,8 +10,8 @@
     padding-top: 4rem;
     display: grid;
 
-    grid-template-rows: .4fr min-content min-content .5fr max-content;
-    grid-template-columns: max-content;
+    grid-template-rows: .4fr min-content minmax(min-content, max-content) .2fr max-content;
+    grid-template-columns: minmax(min-content,max-content);
     row-gap: 2rem;
     justify-content: center;
     align-content: center;
@@ -51,11 +51,13 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         justify-items: center;
+        align-items: center;
         column-gap: 3rem;
 
         img
         {
-            height: 2.5rem;
+            max-height: 2.5rem;
+            max-width: 100%;
             filter: brightness(70%);
 
         }
