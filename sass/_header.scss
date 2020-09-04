@@ -10,9 +10,9 @@
     padding-top: 4rem;
     display: grid;
 
-    grid-template-rows: .4fr min-content 5rem min-content min-content;
+    grid-template-rows: .4fr min-content min-content .5fr max-content;
     grid-template-columns: max-content;
-    row-gap: 1.5rem;
+    row-gap: 2rem;
     justify-content: center;
     align-content: center;
 
@@ -27,13 +27,36 @@
         align-self: start;
         justify-self: start;
     }
-    &__seenon-text{}
+    &__seenon-text
+    {
+        display: grid;
+        font-size: 1.6rem;
+        color: base.$color-grey-light-2;
+        grid-template-columns: 1fr max-content 1fr;
+        align-content: center;
+        column-gap: 1.5rem;
+
+        &::before, &::after
+        {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+    
+        }
+    }
     
     &__seenon-logos
     {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        column-gap: 3rem;
+
         img
         {
             height: 2.5rem;
+            filter: brightness(70%);
 
         }
     }
